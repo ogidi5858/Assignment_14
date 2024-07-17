@@ -1,0 +1,461 @@
+<!doctype html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta name ="keyword" content="HTML 5, CSS 3, JavaScript, JOuery, Angularjs"/>
+<meta name="description" content=" Dynamic web developrment">
+<meta name ="author" content="mildred">
+<meta name="viewport" content ="width=device-width, initial-scale=1.0">
+<title> float layout</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" type="text/css" href="./CSS/CSS.css">
+
+<style> 
+
+
+
+
+</style>
+</head>
+
+<body style="background-image: url(../Image/sti.jpg); background-size: 1400px; background-repeat: no-repeat;">
+    <nav class="topnav">
+        <ul>
+            <li><a href="../Pages/registeration.html">Register</a></li>
+            <li><a href="../Pages/clients page.html">Home</a></li>
+            <li><a href="../index.html">Logout</a></li>
+        </ul>
+    </nav>
+
+    <section class="row">
+        <nav class="col-3">
+            <div class="side-nav">             
+                
+                <a href="../Pages/personalinfo.html" style=" margin-top: 20%;"><i class="fa fa-user" aria-hidden="true"></i> Personal Information</a>
+                <a href="../Pages/riskfactors.html"><i class="fa fa-times" aria-hidden="true"></i> Risk Factor Information</a>
+                <a href="../Pages/hepb_form.html"><i class="fa fa-user-plus" aria-hidden="true"></i> Hepatitis B Pregnant Women &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reporting</a>
+                <a href="../Pages/cong_syphillis.html"><i class="fa fa-medkit" aria-hidden="true"></i> Congenital Syphilis Form</a>
+                <a href="../Pages/sti.html"><i class="fa fa-check-square" aria-hidden="true"></i> Chlamydia & Gonorrhea Case &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reporting</a>            
+        </div>
+        </nav>
+
+        <article class="col-9">
+            <h2 style="text-align: center; font-size: 30px;">STI Case Report Form For Chlamydia and Gonorrhea</h2>
+            <form method="post" action="" name="personalinfo" onsubmit="return validatepersonalinfo();" autocomplete="off" class="form-container" id="form">
+                
+                <!--onsubmit="return validatepersonalinfo();"  USE--> 
+
+                <Table class="table-box" style="border: solid 1px;background-color: rgba(255,255,255,0.8);">
+
+                    <tr><td colspan="5"><h3  class="head3" style="background-color: #057755; color: white; font-size: 25px; margin: 0px; height: 50px; padding-top: 10px; text-align: center;">Clinic Information:</h3></td></tr>
+
+                    <!--first details-->
+                    <tr>
+                        <td colspan="2"><b><label for="datefill">Date:</label></b>
+                        <input  type="date" name="date" id="datefill">
+                        <!--java script validation-->
+                        <span id="date_err"></span></td>
+
+                        <td colspan="3"><b><label for="completingform">Completing the form:</label></b>
+                        <input type="text" name="completingform" id="completingform" size="50">
+                        <!--java script validation-->
+                        <span id="complete_err"></span></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="3"><b><label for="healthprovider">Health Provider:</label></b>
+                        <input type="text" name="healthprovider" id="healthprovider" size="50">
+                        <!--java script validation-->
+                        <span id="provider_err"></span></td>
+
+                        <td colspan="2"><label for="contactphonenumber">Phone number/fax:</label>
+                        <input type="tel" name="number" id="contactphonenumber">
+                        <!--java script validation-->
+                        <span id="contact_err"></span></td>
+                    </tr>
+                </Table>
+                <P style="padding: 10px; text-align: left;">Your lab reported a communicable disease on the patient shown below and listed you as the provider. The Oregon Department of Human Services and Washington
+                    County require additional information. The fax cover sheet you have received references Oregon Law (ORS 433) that requires you to report this information.<BR/>
+                   <B>Please complete the form within 24 hours, or by the end of the next working day, and fax it back to our office at 503-846-3644. </B> If you
+                    prefer you may call to report the required information. We appreciate your cooperation and prompt handling of this confidential report.</P>
+
+                    
+                    <table style="background-color: rgba(255,255,255,0.9);">
+                        <tr><td colspan="7"><h3 class="head3" >Patient Information — Please complete all information requested below</h3></td></tr>
+                        <tr>
+                            <td colspan="2"><b><label for="fname">NAME:</label></b><br/>
+                            <input type="text" size="50" name="fullname" id="fname" onblur="return validatefn();" placeholder="Enter full name" >
+                            <!--java script validation-->
+                            <span id="fullname_err"></span></td>
+
+                            <td colspan="2"><b><label for="dob">DATE OF BIRTH:</label></b><br/>
+                            <input type="date" id ="dob" name="dateofbirth">
+                            <!--java script validation-->
+                            <span id="birth_err"></span></td>
+                            
+                            <td colspan="3"><b><label for="sex">GENDER:</label></b><br/>
+                            <input type="checkbox" value="Male" name="gender" id="Male">
+                            <label for="gender">Male</label>
+
+                            <input type="checkbox" value="Female" name="gender" id="Female">
+                            <label for="gender">Female</label>
+
+                            <input type="checkbox" value="Other" name="gender" id="Other">
+                            <label for="gender">Other</label> 
+                            <!--java script validation-->
+                            <span id="genderidentity_err"></span></td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2"><b><label for="homeaddress">HOME ADDRESS:</label></b><br/>
+                            <input type="text" size="50" placeholder="Enter your Home-Address" name="homeaddress" id="homeaddress"></td>
+
+                            <td colspan="3"><b><label for="city/state">city/state</label></b>
+                            <input type="text" name="address" id="city/state"></td>
+
+                            <td colspan="2"><b><label for="zipcode">zip</label></b>
+                            <input type="text" name="zipcode" id="zipcode" size="5"></td>
+                        </tr>
+                        
+                        <tr>
+                            <td colspan="3"><b><label for="phonenumber">PHONE NUMBER:</label></b><br/>
+                            <input type="tel" placeholder="0000-000-0000" name="phonenumber" id="phonenumber"></td>
+
+                            <td colspan="4"><b><label for="alt">ALTERNATIVE #</label></b><br/>
+                            <input type="tel" placeholder="0000-000-0000" name="alternativephonenumber" id="alt"></td>
+                        </tr>
+                    
+
+                       
+                        <tr>
+                            <td colspan="4"><b><label for="test">PREGNANCY TEST RESULTS:</label></b><br/>
+                            <input type="checkbox" id="test" name="testresult" value="NA">
+                            <label>N/A</label>
+
+                            <input type="checkbox" id="test" name="testresult" value="Negative">
+                            <label>Negative</label>
+
+                            <input type="checkbox" id="test" name="testresult" value="Unknown">
+                            <label>Unknown</label>
+
+                            <input type="checkbox" id="test" name="testresult" value="Positive">
+                            <label>Positive</label></td>
+
+                            <td colspan="3"><b><label for="result">If positive how many weeks?</label></b><br/>
+                            <input type="text" id="result" name="question"></td>
+                        </tr>
+                        
+                        
+                        
+                        <tr>
+                            <td colspan="1"><b><label for="ethnicity">ETHNICITY:</label></b><br/>
+                            <input type="checkbox" id="Hispanic" name="ethnicity" value="Hispanic">
+                            <label for="hispanic">Hispanic</label><br/>
+
+                            <input type="checkbox" id="Non_Hispanic" name="ethnicity" value="Non_Hispanic">
+                            <label for="Non_Hispanic">Non_Hispanic</label><br/>
+
+                            <input type="checkbox" id="Unknown" name="ethnicity" value="Unknown">
+                            <label for="unknown">Unknown</label>
+                             <!--java script validation--> 
+                            <span id="ethnicity_err"></span></td>
+                            
+                            <td colspan="3"><b><label for="race">RACE:</label></b><br/>
+                            <input type="checkbox" id="race" name="race" value="white">
+                            <label>White</label>
+
+                            <input type="checkbox" id="race" name="race" value="Black">
+                            <label>Black</label>
+                            
+                            <input type="checkbox" id="race" name="race" value="Asian">
+                            <label>Asian</label><br/>
+
+                            <input type="checkbox" id="race" name="race" value="American-india">
+                            <label > American Indian</label>
+
+                            <input type="checkbox" id="race" name="race" value="Alaskan">
+                            <label>Alaskan</label><br/>
+
+                            <input type="checkbox" id="race" name="race" value="pacific">
+                            <label> Pacific Islander</label>
+                                
+                            <input type="checkbox" id="race" name="race" value="unknow">
+                            <label> Unknown</label><br/>
+
+                            <input type="checkbox" id="race" name="race" value="Other">
+                            <label>Other</label>
+                            <input type="text" name="other" id="race" size="20">
+                             <!--java script validation-->
+                            <span id="raceErr"></span></td>
+                                                          
+                            <td colspan="2"><b><label for="partner">GENDER OF SEX PARTNER(S):</label></b><br/>
+                            <input type="checkbox" id="partner" name="sexpartners" value="Male">
+                            <label>Male</label>
+
+                            <input type="checkbox" id="partner" name="sexpartners" value="Both">
+                            <label>Both</label><br/>
+
+                            <input type="checkbox" id="partner" name="sexpartners" value="Female">
+                            <label>Female</label>
+
+                            <input type="checkbox" id="partner" name="sexpartners" value="Unknown"> 
+                            <label>Unknown</label>
+                             <!--java script validation-->
+                            <span id="sexpartnersErr"></span></td>                               
+                        </tr> 
+                        
+                        <tr>
+                            <td colspan="7"><b><label for="result">TEST RESULT TYPE: </label></b><br/>
+                            <input type="checkbox" id="result" name="result" value="chlamydia">
+                            <label>Chlamydia Positive Result</label>
+
+                            <input type="checkbox" id="result" name="result" value="gonorrhea">
+                            <label>Gonorrhea Positive Result</label>
+
+                            <b><label for="testing" style="padding-left: 10px;">PREVIOUS HIV TESTING:</label></b>
+                            
+                            <input type="checkbox" id="testing" name="hivtest" value="yes">
+                            <label>Yes</label>
+
+                            <input type="checkbox" id="testing" name="hivtest" value="no">
+                            <label>No</label>
+
+                            <input type="checkbox" id="testing" name="hivtest" value="unknow">
+                            <label>Unknown</label><br/>
+
+                            <label for="date">Date</label> 
+                            <input type="date" id="date" name="dat">
+
+                            <label for="date2">Date</label> 
+                            <input type="date" id="date2" name="date">
+                             <!--java script validation-->
+                            <span id="gonorrheaErr"></span>
+
+                            <b><label for="lastresult" style="padding-left: 100px; padding-right: 42px;">If yes, last result was?</label></b>
+                            <input type="checkbox" id="lastresult" name="lastresult1" value="pos">
+                            <label>POS</label>
+    
+                            <input type="checkbox" id="lastresult" name="lastresult2" value="nag">
+                            <label>Nag</label> 
+    
+                            <input type="checkbox" id="lastresult" name="lastresult3" value="unknow">
+                            <label>Unknown</label><br/>
+
+                            <label for="month" style="margin-left: 380px;">Month of last test</label>
+                            <input type="text" id="month" name="last-test">
+
+                            <label for="year">Year of last test</label>
+                            <input type="text" id="year" name="last-year">
+                            </td>
+                        </tr>                 
+
+                        <tr>
+                            <td colspan="1"><b><label for="exam">REASON FOR EXAM:</label></b><br/>
+                            <input type="checkbox" id="exam" name="reasonforexam" value="Symptomatic">
+                            <label>Symptomatic</label><br/>
+
+                            <input type="checkbox" id="exam" name="reasonforexam" value="Routine">
+                            <label>Routine Exam</label><br/>
+
+                            <input type="checkbox" id="exam" name="reasonforexam" value="Cure">
+                            <label>Test for Cure</label><br/>
+
+                            <input type="checkbox" id="exam" name="reasonforexam" value="Exposed">
+                            <label>Exposed to Infection</label><br/>
+                            
+                            <input type="checkbox" id="exam" name="reasonforexam" value="Pregnant">
+                            <label>Pregnant</label>
+                             <!--java script validation-->
+                            <span id="reasonErr"></span></td>
+
+                            <td colspan="4"><b><label for="dia">DIAGNOSIS:</label></b><br/>
+                            <input type="checkbox" id="dia" name="diagnosis" value="Asymptomatic">
+                            <label>Asymptomatic</label><br/>
+
+                            <input type="checkbox" id="dia" name="diagnosis" value="Uncomplicated">
+                            <label>Symptomatic-Uncomplicated</label><br/>
+
+                            <input type="checkbox" id="dia" name="diagnosis" value="Pelvic">
+                            <label>Pelvic Inflammatory Disease (PID)</label><br/>
+
+                            <input type="checkbox" id="dia" name="diagnosis" value="Ophthalmia">
+                            <label>Ophthalmia /conjunctivitis</label><br/>
+
+                            <input type="checkbox" id="dia" name="diagnosis" value="Disseminated">
+                            <label>Disseminated</label>
+                             <!--java script validation-->
+                            <span id="diagnosisErr"></span></td>
+
+                            
+                            <td colspan="2"><b><label for="sits">SITE(S):</label></b><br/>
+                            
+                            <input type="checkbox" id="sits" name="site" value="Cervix">
+                            <label>Cervix</label>
+                            <input type="checkbox" id="sits" name="site" value="Vaginal">
+                            <label>Vaginal</label>
+                            <input type="checkbox" id="sits" name="site" value="Urethra">
+                            <label>Urethra</label>
+                            <input type="checkbox" id="sits" name="site" value="Rectum">
+                            <label>Rectum</label><br/>
+                            
+                            <input type="checkbox" id="sits" name="site" value="Ocular">
+                            <label>Ocular</label>
+                            <input type="checkbox" id="sits" name="site" value="Urine">
+                            <label>Urine</label>
+                            <input type="checkbox" id="sits" name="site" value="Pharynx">
+                            <label>Pharynx</label>
+                            <input type="checkbox" id="sits" name="site" value="Other">
+                            <label>Other</label>
+                            <!--java script validation-->
+                            <span id="siteErr"></span></td>
+                            
+                        </tr>                                         
+
+                        <tr>
+                        <th colspan="3"><h3 class="head3">GONORRHEA TREATMENT PLAN:</h3> </th>
+                        <th colspan="4"><h3 class="head3">CHLAMYDIA TREATMENT PLAN:</h3> </th><br/>
+                    </tr>
+                    <tr>
+                        <td colspan="1"><input type="checkbox" id="plan" name="treatment-plan1" value="Rocephin">
+                        <label for="plan">Rocephin/Ceftriaxone 250mg IM x 1.</label><br/>
+
+                        <label for="plandate">Date</label>
+                        <input type="date" name="date" id="plandate">
+                        
+                        <b><p  style="text-align: center; margin: 0px;">PLUS</p></b><br/>
+
+                        <input type="checkbox" id="plan2" name="treatment-plan2" value="Azithromycin">
+                        <label for="plan2">Azithromycin 1gm orally in a single dose.</label></td>                                            
+
+                        <td colspan="6"><input type="checkbox" id="chlamydia" name="chlamydia" value="Azithromycin2">
+                        <label for="chlamydia">Azithromycin 1gm orally in a single dose./label><br/>
+
+                        <label for="plandate2">Date</label>
+                        <input type="date" name="date" id="plandate2">
+
+                        <b><p  style="text-align: center; margin: 0px;">PLUS</p></b><br/>
+                        <input type="checkbox" id="chlamydia2" name="chlamydia2" value="chlamydia2">
+                        <label for="">Rocephin/CeftrDoxycycline 100mg BID x 7 days. </label></td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="3" style="background-color: #057755; color: white;">Alternative Treatment Regimens</th>
+                        <th colspan="4" style="background-color: #057755; color: white;">Alternative Treatment Regimens<br/></th>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="3"><input type="checkbox" id="cef" name="400mg" value="Cefixime">
+                        <label for="cef">Cefixime 400mg orally in a single dose.</label>
+
+                        <label for="date3" style="padding-left: 60px;">Date</label>
+                        <input type="date" id="date3" name="date3">
+
+                        <b><p  style="padding-left: 160px;">PLUS</p></b>
+
+                        <input type="checkbox" id="azi" name="Azithromycin" value="Azithromycin">
+                        <label for="azi">Azithromycin 1 gm orally in a single dose</label></td>
+
+                        <td colspan="4"><input type="checkbox" id="amo" name="Amoxicillin" value="Amoxicillin">
+                        <label for="amo"> Amoxicillin 500mg orally tid X 7 days </label>
+
+                        <label for="date4">Date</label>
+                        <input type="date" id="date4" name="date4"></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2"><input type="checkbox" id="other" name="other" value="other-treatment">
+                        <label for="other">Other Treatment</label>
+
+                        <label for="date5" style="padding-left: 60px;">Date</label>
+                        <input type="date" id="date5" name="date5"><br/>
+                        
+                        <input type="text" id="cure" name="recommended" ><br/>
+                       <i><label for="cure">(test of cure recommended at 1 month)</label></i></td>
+
+                        <td colspan="5"><input type="checkbox" id="other2" name="other3" value="other-treatment2">
+                        <label for="other2">Other Treatment:</label>
+
+                        <label for="date6" style="padding-left: 70px;">Date</label>
+                        <input type="date" id="date6" name="date6"><br/>
+                        <input type="text"></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="7"><b>IF NOT TREATED YET — PATIENT NOTIFIED OF INFECTION:</b>
+                        <input type="checkbox" id="yes" name="yes2" value="Yes">
+                        <label for="yes2">Yes</label>
+                        
+                        <input type="checkbox" id="no2" name="no" value="No" >
+                        <label for="no2">No</label><br/>
+
+                        <b>Does the provider need assistance in contacting a client that has not responded for treatment? </b>
+                        <input type="checkbox" id="yes3" name="yes3" value="Yes">
+                        <label for="yes3">Yes</label>
+
+                        <input type="checkbox" id="no3" name="no" value="No" >
+                        <label for="no3">No</label></td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="7" style="background-color: #057755; color: white;">PARTNER MANAGEMENT PLAN — Ensuring Partner Treatment</th>
+                    </tr>
+
+                    <tr>
+                        
+                        <td colspan="7">
+                        <div style="text-align: center;">Expedited Partner Therapy dispensed at time of visit?
+                        <input type="checkbox" id="option" name="no" value="No">
+                        <label for="option">No</label>
+
+                        <input type="checkbox" id="option2" name="yes" value="Yes">
+                        <label for="option2">Yes</label>
+
+                        <label for="many">How many partners?</label>
+                        <input type="text" id="many" name="partner"><br/>
+
+                        <label>(See: OHA/STD Prevention for EPT guidelines and policy).</label>
+                    </div></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="7">
+                        <div style="text-align: center;"> When resources allow the health department will be contacting gonorrhea cases and high risk chlamydia cases to offer partner services.<br/>
+                         Please notify patient that public health worker may be contacting them to offer partner services.<br/>
+                        <input type="checkbox" id="request" name="request" value="PROVIDER">
+                        <label for="request">PROVIDER REQUESTS THAT CLIENT NOT BE CONTACTED BY PUBLIC HEALTH/PROVIDER WILL ASSURE PARTNER TREATMENT</label>
+                    </div></td>
+                    </tr>
+
+                    <tr>
+                       <td colspan="7">
+                        <div style="text-align: center;"> <b>CURRENT RECOMMENDED TREATMENT- See CDC Guidelines at: <a href="#">www.cdc.gov/std/treatment/</a></b>
+                        </div></td>
+                    </tr>
+                        
+                    </table>
+                    <div style="margin:50px 0;"></div>
+
+                    <input type="submit" value="submit" name="submit"  style="  
+                    margin-left: 400px;
+                    margin-top: 20px;
+                    margin-bottom: 20PX;
+                    width: 10%;
+                    padding: 10px;
+                    background-color: #057755;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    color: white;">
+            </form>
+            
+            <p>STI CT, GC Case Reporting Form, 07/16</p>
+          
+        </article>
+    </section>
+    <script src="../Assignment_14/Scrpt/js.js"></script>
+
+
+</body>
+
+</html>
